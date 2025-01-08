@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soorrryyyyyyyy</title>
     <style>
-      /* author - deepak tiwari */
+      /* Basic Styles */
       * {
         margin: 0;
         padding: 0;
@@ -40,8 +40,9 @@
         max-width: 200px;
       }
 
-      .container .btn {
+      .btn {
         display: flex;
+        justify-content: space-between;
         gap: 25px;
       }
 
@@ -51,149 +52,117 @@
         background: #fff;
         padding: 10px 25px;
         border-radius: 8px;
-        box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+        box-shadow: 0.5rem 1rem 3rem rgba(0, 0, 0, 0.3);
+      }
+
+      /* Removed hover movement for No button */
+      .btn a:hover {
+        background-color: #f0f0f0;
+        cursor: pointer;
       }
     </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const pages = document.querySelectorAll(".container");
-        let currentPageIndex = 0;
-
-        function showPage(index) {
-          pages.forEach((page, i) => {
-            page.classList.toggle("active", i === index);
-          });
-        }
-
-        const btns = document.querySelectorAll(".btn a");
-        btns.forEach((btn) => {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetId = btn.getAttribute("href").replace("#", "");
-            if (targetId === "thankyou") {
-              currentPageIndex = pages.length - 1;
-            } else {
-              currentPageIndex++;
-            }
-            showPage(currentPageIndex);
-          });
-        });
-
-        showPage(currentPageIndex);
-      });
-    </script>
   </head>
   <body>
     <!-- First Page -->
-    <div class="container active">
-      <div
-        class="tenor-gif-embed"
-        data-postid="22885016"
-        data-share-method="host"
-        data-aspect-ratio="1.04918"
-        data-width="100%"
-      >
-        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a
-        >from
-        <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
+    <div class="container active" id="page-1">
+      <div class="tenor-gif-embed" data-postid="22885016" data-share-method="host" data-aspect-ratio="1.04918" data-width="100%">
+        <a href="https://tenor.com/view/manja-gif-22885016">Manja Sticker</a> from <a href="https://tenor.com/search/manja-stickers">Manja Stickers</a>
       </div>
       <script async src="https://tenor.com/embed.js"></script>
       <h1>I am really sorryyy 🤗</h1>
       <p>~maan jaa yaaar</p>
-
       <div class="btn">
-        <a href="#thankyou">Yes</a>
-        <a href="#second">No</a>
+        <a href="#" data-target="page-5">Yes</a>
+        <a href="#" data-target="page-2">No</a>
       </div>
     </div>
 
     <!-- Second Page -->
-    <div class="container">
-      <div
-        class="tenor-gif-embed"
-        data-postid="22050818"
-        data-share-method="host"
-        data-aspect-ratio="1"
-        data-width="100%"
-      >
-        <a href="https://tenor.com/view/mochi-gif-22050818">Mochi Sticker</a
-        >from
-        <a href="https://tenor.com/search/mochi-stickers">Mochi Stickers</a>
+    <div class="container" id="page-2">
+      <div class="tenor-gif-embed" data-postid="22050818" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+        <a href="https://tenor.com/view/mochi-gif-22050818">Mochi Sticker</a> from <a href="https://tenor.com/search/mochi-stickers">Mochi Stickers</a>
       </div>
       <h1>Please think again! 🙄</h1>
       <p>maan jaa😥</p>
-
       <div class="btn">
-        <a href="#thankyou">Yes</a>
-        <a href="#third">No</a>
+        <a href="#" data-target="page-5">Yes</a>
+        <a href="#" data-target="page-3">No</a>
       </div>
     </div>
 
     <!-- Third Page -->
-    <div class="container">
-      <div
-        class="tenor-gif-embed"
-        data-postid="15195810"
-        data-share-method="host"
-        data-aspect-ratio="1"
-        data-width="100%"
-      >
-        <a
-          href="https://tenor.com/view/couple-forgive-me-asking-for-forgiveness-begging-crying-gif-15195810"
-          >Couple Forgive Me Sticker</a
-        >from
-        <a href="https://tenor.com/search/couple-stickers">Couple Stickers</a>
+    <div class="container" id="page-3">
+      <div class="tenor-gif-embed" data-postid="15195810" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+        <a href="https://tenor.com/view/couple-forgive-me-asking-for-forgiveness-begging-crying-gif-15195810">Couple Forgive Me Sticker</a> from <a href="https://tenor.com/search/couple-stickers">Couple Stickers</a>
       </div>
       <h1>Ek aur baar Soch lo! 😣</h1>
       <p>kyu aisa kar rahi ho 😣</p>
-
       <div class="btn">
-        <a href="#thankyou">Yes</a>
-        <a href="#fourth">No</a>
+        <a href="#" data-target="page-5">Yes</a>
+        <a href="#" id="no-move">No</a>
       </div>
     </div>
 
     <!-- Fourth Page -->
-    <div class="container">
-      <div
-        class="tenor-gif-embed"
-        data-postid="15974530976611222074"
-        data-share-method="host"
-        data-aspect-ratio="1.26923"
-        data-width="100%"
-      >
-        <a
-          href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074"
-          >Peach Goma Phone Sticker</a
-        >from
-        <a href="https://tenor.com/search/peach+goma-stickers"
-          >Peach Goma Stickers</a
-        >
+    <div class="container" id="page-4">
+      <div class="tenor-gif-embed" data-postid="15974530976611222074" data-share-method="host" data-aspect-ratio="1.26923" data-width="100%">
+        <a href="https://tenor.com/view/peach-goma-phone-gif-15974530976611222074">Peach Goma Phone Sticker</a> from <a href="https://tenor.com/search/peach+goma-stickers">Peach Goma Stickers</a>
       </div>
       <h1>ho gyi gltiii 😭</h1>
       <p>sorryyy😭</p>
-
       <div class="btn">
-        <a href="#thankyou">Yes</a>
-        <a href="#thankyou">No</a>
+        <a href="#" data-target="page-5">Yes</a>
+        <a href="#" data-target="page-5">No</a>
       </div>
     </div>
 
     <!-- Thank You Page -->
-    <div class="container">
-      <div
-        class="tenor-gif-embed"
-        data-postid="253027946666209433"
-        data-share-method="host"
-        data-aspect-ratio="1.37853"
-        data-width="100%"
-      >
-        <a
-          href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433"
-          >Mochi Cat GIF</a
-        >from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
+    <div class="container" id="page-5">
+      <div class="tenor-gif-embed" data-postid="253027946666209433" data-share-method="host" data-aspect-ratio="1.37853" data-width="100%">
+        <a href="https://tenor.com/view/mochi-cat-mochi-and-goma-goma-and-peach-mochi-mochi-peach-cat-gif-gif-253027946666209433">Mochi Cat GIF</a> from <a href="https://tenor.com/search/mochi-gifs">Mochi GIFs</a>
       </div>
       <h1>Thank youu I love youuu</h1>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const containers = document.querySelectorAll(".container");
+        const buttons = document.querySelectorAll(".btn a");
+        const noButton = document.querySelector("#no-move");
+
+        // Function to show a specific page by ID
+        function showPage(targetId) {
+          containers.forEach((container) => {
+            container.classList.toggle("active", container.id === targetId);
+          });
+        }
+
+        // Add click event listeners to navigation buttons
+        buttons.forEach((button) => {
+          button.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = button.getAttribute("data-target");
+            if (targetId) {
+              showPage(targetId);
+            }
+          });
+        });
+
+        // Add click event listener to the "No" button on the third page
+        noButton.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Get random position for "No" button
+          const container = noButton.closest(".container");
+          const maxX = container.clientWidth - noButton.offsetWidth;
+          const maxY = container.clientHeight - noButton.offsetHeight;
+
+          // Move the "No" button to a random position
+          noButton.style.position = "absolute";
+          noButton.style.left = Math.random() * maxX + "px";
+          noButton.style.top = Math.random() * maxY + "px";
+        });
+      });
+    </script>
   </body>
 </html>
